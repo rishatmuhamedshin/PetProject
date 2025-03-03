@@ -1,0 +1,11 @@
+@import models.dto.LoginDTO
+@(form: Form[LoginDTO])(implicit lang: play.api.i18n.Lang)
+
+
+@main("Login"){
+    @helper.form(action = routes.AuthController.loginForSubmit()){
+        @helper.inputText(form("email"))(views.fieldsConstructors.bFieldConstructor, lang)
+        @helper.inputPassword(form("email"))(views.fieldsConstructors.bFieldConstructor, lang)
+        <button type="submit" class = "btn btn-primary">Log in</button>
+    }
+}

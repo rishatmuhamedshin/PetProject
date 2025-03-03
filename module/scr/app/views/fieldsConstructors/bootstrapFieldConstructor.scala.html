@@ -1,0 +1,13 @@
+@(elements: helper.FieldElements)
+
+<div class="mb-3">
+    <label for="@elements.id">@elements.label(elements.lang)</label>
+    <input type="text" class="form-control @if(elements.hasErrors){is-invalid}"
+    id="@elements.field.id"
+    name="@elements.field.name"
+    value="@elements.field.value"
+    >
+    <div class="invalid-feedback">
+    @elements.errors(elements.lang).mkString(", ")
+    </div>
+</div>
