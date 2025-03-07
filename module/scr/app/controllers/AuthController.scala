@@ -23,21 +23,21 @@ class AuthController extends Controller {
   }
 
 
-//  def login = Action(parse.json){request =>
-//    (request.body \ "email").asOpt[String] match {
-//      case Some(email) =>
-//        val token = jwtService.createToken(email)
-//        Ok(Json.obj("token" -> token))
-//      case None => BadRequest("Missing username")
-//    }
-//  }
-  val form: Form[LoginDTO] = Form(mappingForm)
-
-
   val mappingForm: Mapping[LoginDTO] = Forms.mapping(
     "email" -> email,
     "password" -> nonEmptyText(minLength = 6)
   )(LoginDTO.apply)(LoginDTO.unapply)
+
+
+  //  def login = Action(parse.json){request =>
+  //    (request.body \ "email").asOpt[String] match {
+  //      case Some(email) =>
+  //        val token = jwtService.createToken(email)
+  //        Ok(Json.obj("token" -> token))
+  //      case None => BadRequest("Missing username")
+  //    }
+  //  }
+  val form: Form[LoginDTO] = Form(mappingForm)
 
   def loginPage = Action{
     Ok(views.html.login(form))
