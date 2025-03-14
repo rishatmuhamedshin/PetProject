@@ -5,7 +5,7 @@
 @main("Login"){
     @helper.form(action = routes.AuthController.loginForSubmit()){
         @helper.inputText(form("email"))(views.fieldsConstructors.bFieldConstructor, lang)
-        @helper.inputPassword(form("email"))(views.fieldsConstructors.bFieldConstructor, lang)
+        @helper.inputPassword(form("password"))(views.fieldsConstructors.bFieldConstructor, lang)
         <button type="submit" class = "btn btn-primary">Log in</button>
     }
 }

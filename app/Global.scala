@@ -3,7 +3,10 @@ import com.google.inject.{Guice, Module}
 import db.{Liqui, SquerylConfig}
 import org.squeryl.{Session, SessionFactory}
 import org.squeryl.internals.DatabaseAdapter
+import play.api.mvc.{RequestHeader, Result}
 import play.api.{Application, GlobalSettings, Logger}
+
+import scala.concurrent.Future
 
 object Global extends GlobalSettings{
 

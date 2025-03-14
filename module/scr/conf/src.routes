@@ -6,7 +6,8 @@ GET /action5                   controllers.IndexController.action5
 GET /action6                   controllers.IndexController.action6
 GET /action7/:number           controllers.IndexController.action7(number: Int)
 GET /action8                   controllers.IndexController.action8(number: Int ?= 0)
-
+GET /action10                  controllers.IndexController.action10
+GET /action11                  controllers.IndexController.action11
 
 # Аутентификация
 GET     /login                 @controllers.AuthController.loginPage
