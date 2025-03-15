@@ -1,18 +1,17 @@
-GET /action1                   controllers.IndexController.action1
-GET /action2                   controllers.IndexController.action2
-GET /action3                   controllers.IndexController.action3
-GET /action4                   controllers.IndexController.action4
-GET /action5                   controllers.IndexController.action5
-GET /action6                   controllers.IndexController.action6
-GET /action7/:number           controllers.IndexController.action7(number: Int)
-GET /action8                   controllers.IndexController.action8(number: Int ?= 0)
-GET /action10                  controllers.IndexController.action10
-GET /action11                  controllers.IndexController.action11
 
 # Аутентификация
 GET     /login                 @controllers.AuthController.loginPage
-# POST   /login           @controllers.AuthController.login
-POST   /login                  @controllers.AuthController.loginForSubmit
+POST    /login                 @controllers.AuthController.loginForSubmit
+
 
 # Защищенные маршруты (требуется JWT)
-GET    /secure                 @controllers.AuthController.secureEndpoint
+GET     /secure                @controllers.AuthController.secureEndpoint
+
+GET     /homePage              controllers.IndexController.homePage
+
+
+
+
+
+# Статик файлы
+GET     /assets/*file        controllers.Assets.versioned(path="/public", file)
